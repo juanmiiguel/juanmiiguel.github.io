@@ -1,15 +1,103 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Retro Paddle</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soporte de apps</title>
+  <meta name="description" content="Página de soporte para las apps publicadas por Juan Miguel.">
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7faf8;
+      --panel: #ffffff;
+      --text: #17211b;
+      --muted: #53645a;
+      --line: #d9e4dc;
+      --accent: #197a43;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    main {
+      width: min(860px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 56px 0;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2.2rem, 7vw, 4rem);
+      line-height: 1.05;
+    }
+
+    h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    p { margin: 0 0 16px; color: var(--muted); }
+
+    a { color: var(--accent); font-weight: 700; }
+
+    section {
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .app {
+      margin-top: 16px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .app p:last-child,
+    section p:last-child { margin-bottom: 0; }
+
+    .updated {
+      margin-top: 32px;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
-  <h1>
-    Retro Paddle 
-    y 
-    Tres en raya, juegos para divertir y pasar el rato by LVDI.
-  </h1>
-  <p>Juego disponible en App Store.</p>
+  <main>
+    <header>
+      <h1>Soporte de apps</h1>
+      <p>Información de soporte para las apps publicadas por Juan Miguel.</p>
+    </header>
+
+    <section>
+      <h2>BiciRutas</h2>
+      <p>BiciRutas permite crear rutas ciclistas, guardar recorridos, registrar tiempos y exportar rutas en formato GPX.</p>
+      <div class="app">
+        <p><strong>Contacto:</strong> <a href="mailto:juanmiiguelrodriguez@gmail.com">juanmiiguelrodriguez@gmail.com</a></p>
+        <p><strong>Eliminar cuenta:</strong> abre BiciRutas y entra en <strong>Perfil &gt; Cuenta &gt; Eliminar cuenta</strong>. Confirma la acción para borrar la cuenta, eliminar los datos asociados del dispositivo y cerrar la sesión.</p>
+        <p><a href="/bicirutas/">Ver página de soporte de BiciRutas</a></p>
+      </div>
+    </section>
+
+    <section>
+      <h2>Retro Paddle y Tres en raya</h2>
+      <p>Si necesitas ayuda con estos juegos, puedes contactar también por email.</p>
+      <p><a href="mailto:juanmiiguelrodriguez@gmail.com">juanmiiguelrodriguez@gmail.com</a></p>
+    </section>
+
+    <section>
+      <h2>Privacidad</h2>
+      <p>Las apps guardan los datos necesarios para funcionar. En BiciRutas, los datos de cuenta, rutas y tiempos se guardan localmente en el dispositivo.</p>
+    </section>
+
+    <p class="updated">Última actualización: 7 de mayo de 2026.</p>
+  </main>
 </body>
 </html>
