@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{defaultConfig,validateConfig,calculate,parseSaved}from '../engine.js';
+test('permite añadir 20 extras',()=>{const c=defaultConfig();c.extras=Array.from({length:20},(_,i)=>({id:'custom-'+i,name:'Servicio '+i,price:i+1}));validateConfig(c);assert.equal(calculate(c,80,[0,19]).extras,21)});
+test('permite quitar todos los extras',()=>{const c=defaultConfig();c.extras=[];validateConfig(c);assert.equal(calculate(c,80).extras,0)});
+test('guarda y recupera extras personalizados',()=>{const c=defaultConfig('pintura');c.extras.push({id:'custom-1',name:'Protección de muebles',price:33});const restored=parseSaved(JSON.stringify(c));assert.equal(restored.extras.length,3);assert.equal(restored.extras[2].name,'Protección de muebles')});
+test('rechaza ids duplicados',()=>{const c=defaultConfig();c.extras.push({...c.extras[0]});assert.throws(()=>validateConfig(c))});
+test('rechaza precios negativos',()=>{const c=defaultConfig();c.extras.push({id:'new',name:'Prueba',price:-5});assert.throws(()=>validateConfig(c))});
+test('límite de seguridad de 500 extras',()=>{const c=defaultConfig();c.extras=Array.from({length:501},(_,i)=>({id:'x'+i,name:'Extra',price:1}));assert.throws(()=>validateConfig(c))});
