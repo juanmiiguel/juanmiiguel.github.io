@@ -1,4 +1,4 @@
-const SUPABASE_URL='https://obymiudbpqjvyjasbpzj.supabase.co';
+const SUPABASE_URL='https://obymiudbpqjyvjasbpzj.supabase.co';
 const SUPABASE_ANON_KEY='sb_publishable_Q5M8zuvynmb9n6YvaaAEGA_jFWDsBQy';
 const $=id=>document.getElementById(id);const status=m=>$('status').textContent=m;const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]));
 if(!SUPABASE_URL||!SUPABASE_ANON_KEY){status('Pendiente de conectar Supabase: configura URL y clave pública en config.js.');throw Error('Supabase no configurado')}
